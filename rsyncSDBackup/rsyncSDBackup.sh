@@ -24,7 +24,7 @@ for num in $(seq 1 3) ; do
 	sleep 1
 done
 
-if [[ -d /run/media/abig4m/d7cf9a9e-f7da-43d1-aa06-c78c570fb671/ ]]; then
+if [[ -d /run/media/user/d7cf9a9e-f7da-43d1-aa06-c78c570fb671/ ]]; then
 	
 	echo "Script Executed --> $(date)" >> /opt/scriptbash/rsyncSDBackup/logs.txt
 	echo "lastBackup:$(date +%s)" >> /opt/scriptbash/rsyncSDBackup/logDate.txt
