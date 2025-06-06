@@ -58,16 +58,3 @@ else
 	exit 1
 fi
 
-
-#rsync -av --progress --delete --dry-run /mnt/mountDisk/adata250GB/NextCloud/ssd500GB/ /run/media/abig4m/d7cf9a9e-f7da-43d1-aa06-c78c570fb671/
-
-#sleep 10
-
-#best Furture
-#if [[ ! -d /mnt/mountDisk/adata250GB/NextCloud/ssd500GB/ ]]; then
-#    echo "Source directory does not exist" >> /opt/scriptbash/rsyncSDBackup/logs.txt
-#    exit 1
-#fi
-
-
-# add --bwlimit
