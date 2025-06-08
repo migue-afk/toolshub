@@ -21,7 +21,12 @@ function helpPanel(){
 	echo -e " ${yellowColour}[+]${endColour} m) ${grayColour}Insert Network Mask${endColour}"
 	echo -e "\n ${greenColour}Example:${endColour}\n"
 	echo -e "	${grayColour}./ipCalculator.sh -i 192.168.100.150${endColour}"
-	echo -e "	${grayColour}./ipCalculator.sh -i 192.168.100.150 -m 21${endColour}\n"
+	echo -e "	${grayColour} --> ${endColour} ${purpleColour}ip Binary:${endColour} 11000000.10101000.01100100.10010110 --> 192.168.100.150\n${endColour}"
+	echo -e "	${grayColour}./ipCalculator.sh -i 192.168.100.150 -m 21${endColour}"
+	echo -e "	${grayColour} --> ${endColour} ${purpleColour}IP Address:${endColour}  11000000.10101000.01100100.10010110 --> 192.168.100.150"
+	echo -e "	${grayColour} --> ${endColour} ${purpleColour}Netmask:${endColour}     11111111.11111111.11111000.00000000 --> 255.255.248.0"
+	echo -e "	${grayColour} --> ${endColour} ${purpleColour}Network ID:${endColour}  11000000.10101000.01100000.00000000 --> 192.168.96.0"
+	echo -e "	${grayColour} --> ${endColour} ${purpleColour}Host/Net:${endColour}    2046\n"
 }
 
 trap ctrl_c INT
