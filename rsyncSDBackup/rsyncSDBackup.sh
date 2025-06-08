@@ -30,7 +30,7 @@ if [[ -d /run/media/user/d7cf9a9e-f7da-43d1-aa06-c78c570fb671/ ]]; then
 	echo "lastBackup:$(date +%s)" >> /opt/scriptbash/rsyncSDBackup/logDate.txt
 	echo "⏳ Running data backup" >> /opt/scriptbash/rsyncSDBackup/logs.txt
 
-		if rsync -av --delete /mnt/mountDisk/adata250GB/NextCloud/ssd500GB/ /run/media/abig4m/d7cf9a9e-f7da-43d1-aa06-c78c570fb671/; then
+		if rsync -av --delete /mnt/mountDisk/adata250GB/NextCloud/ssd500GB/ /run/media/user/d7cf9a9e-f7da-43d1-aa06-c78c570fb671/; then
 		echo "✅ Backup successful" >> /opt/scriptbash/rsyncSDBackup/logs.txt
 			else
     				echo "⚠️ BACKUP FAILED" >> /opt/scriptbash/rsyncSDBackup/logs.txt
