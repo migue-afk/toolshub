@@ -1,2 +1,1 @@
-
-![](https://github.com/migue-afk/toolshub/tree/master/multi-hop-backup/screenshot)
+![](https://github.com/migue-afk/toolshub/blob/master/multi-hop-backup/screenshot/scheme.png)
