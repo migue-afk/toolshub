@@ -16,7 +16,7 @@ echo "$(date)"
 # backup restic
 
 restic -r $namerepo --verbose backup /mnt/disk500GB --password-file /root/keyfiler0
-restic -r $namerepo --verbose backup /home/mig/ --password-file /root/keyfiler0
+restic -r $namerepo --verbose backup /home/$USER/ --password-file /root/keyfiler0
 restic -r $namerepo --verbose backup /etc --password-file /root/keyfiler0
 echo ">>>>><<<<<<<----- backup finish $(date)"
 
