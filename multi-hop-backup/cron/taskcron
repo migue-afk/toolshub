@@ -1,0 +1,8 @@
+# Backup Remote rsnapshot
+ 0 1,9,17       * * *           root    openalpha/open_alpha.sh >> opensnap/openalpha/log_openalpha 2>&1
+ 0 21           */2 * *           root  openbeta/open_beta.sh >> opensnap/openbeta/log_openbeta 2>&1
+ 20 5            1,15 * *        root   opengamma/open_gamma.sh >> opengamma/log_openxgamma 2>&1
+
+# Backuo Restic
+
+ 0 5,13,21      * * *           root    restic/resticsnap.sh >> restic/log_resticsnap 2>&1
