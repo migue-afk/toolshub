@@ -1,1 +1,1 @@
-Tool for have backup of directory to external unit.
+Tool for have backup of directory/localmachibe to external unit.
