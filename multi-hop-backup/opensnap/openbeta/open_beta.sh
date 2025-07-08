@@ -7,15 +7,15 @@ function ctrl_c (){
 
 trap ctrl_c INT
 
-echo "-------------------------<<<<<<<>>>>>>>>init alpha backup"
+figlet -f digital "init backup beta"
 if ssh hostC@192.168.0.220 "sudo cryptsetup open /dev/sda namedisk --key-file /root/keyfile"; then
-	echo -e "$(date) --------->>><<<<"
+	echo -e "$(date)"
 	echo "init mount namedisk --> $(date)"
 	ssh hostC@192.168.0.220 "sudo mount -t ext4 /dev/mapper/namedisk /mnt/diskbackup/"
 	echo "init mount smb --> $(date)"
-	sudo mount.cifs //192.168.0.220/rsnapshotRemote /mnt/smbsnap/ -o user=user,pass=passtext #---then use keypass, passtext may present security risks
-
-	echo "init rsnapshot mode alpha --> $(date)"
+	sudo mount.cifs //192.168.0.220/rsnapshotRemote /mnt/smbsnap/ -o user=user,pass=passtext # then use keypass, passtext may present security risks
+												 # rsnapshotRemote is a directory in remote host share defined in /etc/samba/smb.conf.	
+	echo "init rsnapshot mode BETA --> $(date)"
 	/usr/bin/rsnapshot -c /etc/rsnapshot_external.conf beta
 	sleep 10
 
@@ -25,8 +25,11 @@ if ssh hostC@192.168.0.220 "sudo cryptsetup open /dev/sda namedisk --key-file /r
 	ssh hostC@192.168.0.220 "sudo systemctl restart smbd"
 	echo "umount namedisk external --> $(date)" 
 	ssh hostC@192.168.0.220 "sudo umount /mnt/diskbackup"
-	echo "close disk ------------> $(date)"
+	echo "close disk --> $(date)"
 	ssh hostC@192.168.0.220 "sudo cryptsetup close namedisk"
 else
 	echo "error /dev/ mount or not found"
 fi
+figlet -f digital "end beta"
+
+
