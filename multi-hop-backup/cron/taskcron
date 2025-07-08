@@ -1,7 +1,7 @@
 # Backup Remote rsnapshot
- 0 1,9,17       * * *           root  /opt/openalpha/open_alpha.sh >> opensnap/openalpha/log_openalpha 2>&1
- 0 21           */2 * *         root  /opt/openbeta/open_beta.sh >> opensnap/openbeta/log_openbeta 2>&1
- 20 5           1,15 * *        root  /opt/opengamma/open_gamma.sh >> opengamma/log_openxgamma 2>&1
+ 0 1,9,17       * * *           root  /opt/openalpha/open_alpha.sh >> /opt/opensnap/openalpha/log_openalpha 2>&1
+ 0 21           */2 * *         root  /opt/openbeta/open_beta.sh >> /opt/opensnap/openbeta/log_openbeta 2>&1
+ 20 5           1,15 * *        root  /opt/opengamma/open_gamma.sh >> /opt/opengamma/log_openxgamma 2>&1
 
 # Backup local Restic
 
