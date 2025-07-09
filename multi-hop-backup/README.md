@@ -37,9 +37,9 @@ Cron task structure
 
 - Init encrypt disc with LUKS
 
- ``` bash
- sudo cryptsetup luksFormat /dev/sda 
- ```
+```bash
+sudo cryptsetup luksFormat /dev/sda 
+```
  
 - Create key file random for unlock disk
  
@@ -56,7 +56,7 @@ chmod 600 /root/keyfile.
 
 - Format disk unit for one first
 
- ```bash
+```bash
  sudo mkfs -t ext4 /dev/mapper/hdd600.    
 ```
 
