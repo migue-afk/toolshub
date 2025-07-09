@@ -27,3 +27,68 @@ Cron task structure
 ```
 
 ![](https://github.com/migue-afk/toolshub/blob/master/multi-hop-backup/screenshot/scheme.png)
+
+
+----
+
+## Configure
+
+### Encrypted disk with unlock file
+
+- Init encrypt disc with LUKS
+
+ ``` bash
+ sudo cryptsetup luksFormat /dev/sda 
+ ```
+ 
+- Create key file random for unlock disk
+ 
+``` bash
+sudo dd if=/dev/random of=/root/keyfile bs=1024 count=4
+chmod 600 /root/keyfile. 
+```
+
+- Access disk with keyfile
+
+``` bash
+ sudo cryptsetup open /dev/sda hdd600 --key-file /root/keyfile
+```
+
+- Format disk unit for one first
+
+ ```bash
+ sudo mkfs -t ext4 /dev/mapper/hdd600.    
+```
+
+- Mount disk
+```bash
+sudo mount -t ext4 /dev/mapper/hdd600 /mnt/disk600GB/
+```
+
+### Automation from central host
+
+**Generate keygen for host**
+
+```bash
+ssh-keygen -t rsa -b 4096
+ssh-copy-id user@ip_host_C
+```
+
+In this case host B and host C create an id, and share your id for init session without credentials
+
+If you ever believe your private key has been compromised, **revoke access to it** by removing the associated public key from the `~/.ssh/authorized_keys` file.
+
+### Unlock Routine
+
+```bash
+$ ssh user@ip_host_C "sudo cryptsetup open /dev/sda hdd600 --key-file /root/keyfile"
+
+$ ssh user@ip_host_C "sudo mount -t ext4 /dev/mapper/hdd600 /mnt/disk600GB/"
+
+-->> ROUTINE FOR CLOSE DISK
+
+$ ssh user@ip_host_C "sudo umount /mnt/disk600GB"
+
+$ ssh user@ip_host_C "sudo cryptsetup close hdd600"
+```
+
