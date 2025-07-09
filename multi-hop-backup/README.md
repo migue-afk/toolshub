@@ -15,6 +15,7 @@
 - OpenSSH Client
 - Rsnapshot
 - Restic
+- crypsetup
 ```
 
 
