@@ -92,4 +92,26 @@ $ ssh user@ip_host_C "sudo umount /mnt/disk600GB"
 
 $ ssh user@ip_host_C "sudo cryptsetup close hdd600"
 ```
+### Policy configuration
+
+- In file rsnapshot.conf define the levels
+
+```bash
+#########################################
+#     BACKUP LEVELS / INTERVALS         #
+# Must be unique and in ascending order #
+# e.g. alpha, beta, gamma, etc.         #
+#########################################
+
+retain  alpha   6
+retain  beta    7
+retain  gamma   8
+```
+- To define policies on restic, edit the cron task or run the manually
+  
+```bash
+
+sudo restic -r restic/ forget --keep-hourly 7 --keep-daily 6 --keep-weekly 4 --keep-monthly 12 --keep-yearly 1 
+```
+  
 
