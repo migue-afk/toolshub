@@ -113,5 +113,10 @@ retain  gamma   8
 
 sudo restic -r restic/ forget --keep-hourly 7 --keep-daily 6 --keep-weekly 4 --keep-monthly 12 --keep-yearly 1 
 ```
+### check integrity
+Use rclone for check integrity
+```bash
+rclone check /directory1 /directory2
+```
   
 
