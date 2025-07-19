@@ -119,5 +119,8 @@ Use rclone for check integrity
 rclone check /directory1 /directory2
 ```
 
-rclone uses md5 by default for integrity checking, however this task can take hours depending on the number and size of files and hardware, for a quick but less reliable check, use —size-only -P, this reduces the time from hours to minutes, because it uses the size of the files for checking.
+rclone uses md5 by default for integrity checking, however this task can take hours depending on the number and size of files and hardware, for a quick but less reliable check, use `—size-only -P`, this reduces the time from hours to minutes, because it uses the size of the files for checking.
 
+```bash
+rclone check /directory1 /directory2 --size -only -P
+```
