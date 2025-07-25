@@ -1,6 +1,6 @@
 ## Description
 
-`multi-hop-backup` is a script designed to automate the creation of backups on multiple servers via SSH (multi-hop backups). It's ideal for environments where access to the hardware where the backups are stored is inaccessible, and for defining scheduled data transfers. It's also focused on low-capacity hardware.
+`multi-hop-backup` is a script designed to automate the creation of backups via SSH (multi-hop backups). It's ideal for environments where access to the hardware where the backups are stored is inaccessible, and for defining scheduled data transfers. It's also focused on low-capacity hardware.
 
 ## Features
 
