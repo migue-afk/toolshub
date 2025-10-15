@@ -1,5 +1,5 @@
  #!/usr/bin/env bash
-SESSION="moni"
+SESSION="monitor"
 
 if tmux has-session -t "$SESSION" 2>/dev/null; then
   exec tmux attach -t "$SESSION"
