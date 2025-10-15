@@ -1,6 +1,8 @@
  #!/usr/bin/env bash
 SESSION="monitor"
 
+# Tmux as monitor system
+
 if tmux has-session -t "$SESSION" 2>/dev/null; then
   exec tmux attach -t "$SESSION"
 fi
