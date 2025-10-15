@@ -9,7 +9,6 @@ fi
 
 tmux new-session -d -s "$SESSION" -n "mon"
 
-# Pane 0: ping
 tmux send-keys -t "$SESSION":0.0 'nmon' C-m
 
 tmux split-window -h -l 75 -t "$SESSION":0
