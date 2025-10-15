@@ -27,7 +27,7 @@ Cron task structure
 0 1,9,17    * * *   root  /opt/openalpha/open_alpha.sh >> /opt/opensnap/openalpha/log_openalpha 2>&1
 ```
 
-![](https://github.com/migue-afk/toolshub/blob/master/multi-hop-backup/screenshot/scheme.png)
+![Schememultihop](screenshot/scheme.png)
 
 
 ----
