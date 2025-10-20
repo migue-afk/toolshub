@@ -92,7 +92,7 @@ $ ssh user@ip_host_C "sudo umount /mnt/disk600GB"
 
 $ ssh user@ip_host_C "sudo cryptsetup close hdd600"
 ```
-### Policy configuration
+### Policy configuration (rsnapshot)
 
 - In file rsnapshot.conf define the levels
 
