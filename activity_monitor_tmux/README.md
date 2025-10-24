@@ -1,5 +1,7 @@
 ## Requirements
 
+For the operation of all screens the following packages are required
+
 ```bash
 - gping
 - nload
