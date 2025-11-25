@@ -1,6 +1,6 @@
 ## Description
 
-`multi-hop-backup` is a script designed to automate the creation of backups via SSH (multi-hop backups). It's ideal for environments where access to the hardware where the backups are stored is inaccessible, and for defining scheduled data transfers. It's also focused on low-capacity hardware.
+`multi-hop-backup` is a backup plan designed to automate backup creation via SSH (multi-hop backups). It is ideal for environments where hardware characteristics create a bottleneck. It is also geared towards low-capacity hardware.
 
 ## Features
 
@@ -124,3 +124,7 @@ rclone uses md5 by default for integrity checking, however this task can take ho
 ```bash
 rclone check /directory1 /directory2 --size -only -P
 ```
+
+----
+Note: Additionally, you can use a client as a [backrest](https://github.com/garethgeorge/backrest) to automate backups to an S3 bucket
+
